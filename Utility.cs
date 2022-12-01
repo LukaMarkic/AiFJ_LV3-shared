@@ -6,7 +6,7 @@ namespace AiFJ_LV3
     class Utility
     {
 
-        List<char> separators = new List<char> { ' ', ',', ';', '(', ')', '[', ']', '{', '}' };
+        List<char> separators = new List<char> { ' ', ',', ';', '(', ')', '[', ']', '{', '}'};
         List<char> operators = new List<char> { '+', '-', '*', '/', '=' };
         List<string> validKeywords = new List<string>{ "int", "float", "return", "char", "void"};
         List<char> constants = new List<char> { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };

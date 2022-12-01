@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.Text;
 
 namespace AiFJ_LV3
 {
@@ -8,12 +10,19 @@ namespace AiFJ_LV3
         
         static void Main(string[] args)
         {
-            String code = "float sumPlusOne (float a, float b)" +
-            "{float result = a + b + 1; return result;}";
+            string readContents;
+            string path = "C:\\Users\\student\\Downloads\\AiFJ_LV3-master\\AiFJ_LV3-master\\TempCode.txt";
+            using (StreamReader streamReader = new StreamReader(path, Encoding.UTF8))
+            {
+                readContents = streamReader.ReadToEnd();
+            }
 
+            if (readContents.Length != 0) {
+                Token token = new Utility().detectTokens(readContents);
+                Console.WriteLine(token.ToString());
+            }
 
-            Token token = new Utility().detectTokens(code);
-            Console.WriteLine(token.ToString());
+           
         }
     }
 }
